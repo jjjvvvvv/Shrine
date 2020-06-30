@@ -19,9 +19,7 @@ import 'model/products_repository.dart';
 import 'model/product.dart';
 
 class HomePage extends StatelessWidget {
-  // TODO: Make a collection of cards (102)
   // TODO: Add a variable for Category (104)
-  @override
   List<Card> _buildGridCards(BuildContext context) {
     List<Product> products = ProductsRepository.loadProducts(Category.all);
 
@@ -47,7 +45,6 @@ class HomePage extends StatelessWidget {
                 product.assetName,
                 package: product.assetPackage,
                 fit: BoxFit.fitWidth,
-                // TODO: Adjust the box size (102)
               ),
             ),
             Expanded(
@@ -115,14 +112,12 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      // TODO: Add a grid view (102)
       body: GridView.count(
           crossAxisCount: 2,
           padding: EdgeInsets.all(16.0),
           childAspectRatio: 8.0 / 9.0,
           children: _buildGridCards(context)),
       resizeToAvoidBottomInset: false,
-      // TODO: Set resizeToAvoidBottomInset (101)
     );
   }
 }
